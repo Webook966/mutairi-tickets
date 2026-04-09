@@ -23,6 +23,8 @@ pnpm workspace monorepo using TypeScript. Contains a full-featured Arabic mobile
 - Admin panel: email `888888000888`, password `888888000888`
 - Allowed email domains: gmail.com, hotmail.com, live.com, yahoo.com
 - Features: iOS-styled spinners/alerts, dark/light mode, multi-step booking, wallet top-up, card payment with admin review, STC Pay with admin review flow, FakePay subscription (50 SAR/week)
+- **Push Notifications**: Expo Push Notifications (real out-of-app notifications) on transfer received, top-up approved, card/STC approved/rejected/code-requested, ticket received
+- **Ticket Transfer**: Transfer tickets to any user by email, auto-fill name lookup, push notification sent to recipient
 - **API calls go through Expo Router API route proxy** at `app/api/[...path]+api.ts` which forwards to localhost:8080
 - AppContext (`context/AppContext.tsx`) uses `lib/apiClient.ts` — all data from shared PostgreSQL DB
 - Polls API every 8 seconds for real-time updates across devices
