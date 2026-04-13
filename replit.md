@@ -29,7 +29,18 @@ pnpm workspace monorepo using TypeScript. Contains a full-featured Arabic mobile
 - AppContext (`context/AppContext.tsx`) uses `lib/apiClient.ts` — all data from shared PostgreSQL DB
 - Polls API every 8 seconds for real-time updates across devices
 
-### 2. `artifacts/api-server` — Express REST API
+### 2. `artifacts/mutairi-website` — React/Vite Web App
+- Exact web copy of the mobile app (same features, same shared DB)
+- Arabic RTL design matching the mobile app colors/style
+- Port 21728, preview path `/mutairi-website/`
+- Pages: Login, Home, Book, MyTickets, Wallet, Account, Admin
+- AppContext (`src/context/AppContext.tsx`) uses `src/lib/api.ts` (fetch to `/api`)
+- Sessions stored in `sessionStorage` under key `mutairi_web_user`
+- Polls API every 8 seconds for real-time sync
+- Tab navigation (5 tabs) at bottom, admin page via navigate("admin")
+- All admin functions: approve/reject top-up, card, STC payments; delete tickets; update wallets
+
+### 3. `artifacts/api-server` — Express REST API
 - Runs on port 8080 (assigned by Replit)
 - Routes: `/api/auth/login`, `/api/auth/register`, `/api/users`, `/api/packages`, `/api/tickets`, `/api/transfers`, `/api/topup-requests`, `/api/card-payments`, `/api/stc-payments`
 - CORS enabled for all origins

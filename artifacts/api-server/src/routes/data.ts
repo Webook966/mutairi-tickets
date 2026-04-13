@@ -166,6 +166,14 @@ router.post("/tickets", async (req, res) => {
   } catch (e) { return res.status(500).json({ error: "خطأ في الخادم" }); }
 });
 
+router.delete("/tickets/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    await db.delete(ticketsTable).where(eq(ticketsTable.id, id));
+    return res.json({ success: true });
+  } catch (e) { return res.status(500).json({ error: "خطأ في الخادم" }); }
+});
+
 router.post("/tickets/:id/transfer", async (req, res) => {
   try {
     const { id } = req.params;

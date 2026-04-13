@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-primary: #1B4FD8;
+  --color-primary-dark: #0B2A99;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-gold: #C9A227;
+  --color-destructive: #EF4444;
+  --color-background: #F0F4FF;
+  --color-card: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-muted: #E8EDF5;
+  --color-muted-fg: #6B7A99;
+  --color-foreground: #0B1426;
+  --color-secondary: #EEF2FF;
+  --font-sans: "Tajawal", sans-serif;
+  --radius-lg: 1rem;
+  --radius-xl: 1.375rem;
+  --radius-2xl: 1.5rem;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: "Tajawal", sans-serif;
+  direction: rtl;
+  background-color: #F0F4FF;
+  color: #0B1426;
+}
+
+* { box-sizing: border-box; }
+
+/* gradient helpers */
+.grad-main {
+  background: linear-gradient(135deg, #0B1426 0%, #1B3A8C 50%, #1B4FD8 100%);
+}
+.grad-gold {
+  background: linear-gradient(135deg, #C9A227 0%, #7B5E0F 100%);
+}
+.grad-success {
+  background: linear-gradient(135deg, #10B981 0%, #065F46 100%);
+}
+.grad-warning {
+  background: linear-gradient(135deg, #F59E0B 0%, #B45309 100%);
+}
+.grad-tickets {
+  background: linear-gradient(135deg, #0B1426 0%, #1B3A8C 50%, #C9A227 100%);
+}
+
+/* card shadow */
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+.card-shadow-sm {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+/* scrollbar hide */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
